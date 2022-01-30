@@ -13,30 +13,49 @@ import random
 from basico_101 import saudacao
 # import pandas as pd
 
+def categorizar(dicionario):
+    categorias = []
+    for chave in dicionario:
+        categorias.append(chave)
+    return categorias
+
+def acessar(chave, dicionario):
+    return chave, dicionario[chave]
+
 saudacao()
 
-# lista_palavras = pd.read_csv(r'C:\Users\Vinicius\Desktop\br-sem-acentos.csv')
+# lista_palavras = pd.read_csv(r'C:\Users\Vinicius\Desktop\br-sem-acentos.csv')  # Extrair palavras direto de uma database
 
-lista_Secretas = ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca', 'mexerica', 'pizza', 'poke',
-                  'teclado', 'tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta', 'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'bulbo', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma', 'olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro', 'aracnoide', 'duramater', 'perna', 'otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico', 'presa', 'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador',
-                  'meriva', 'lamborghini', 'monza', 'opala', 'impala', 'chevette', 'corvette', 'ferrari', 'jaguar', 'porsche', 'onix', 'veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte', 'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo', 'brasil', 'suriname', 'mexico', 'alemanha', 'italia', 'turquia', 'inglaterra', 'india', 'china', 'tailandia', 'indonesia', 'laos', 'togo', 'chipre', 'gana', 'congo', 'egito', 'nigeria', 'argelia', 'angola', 'giovanni', 'fernando', 'vinicius']
-# lista_Secretas = {
-# 'Alimento': ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca', 'mexerica', 'pizza', 'poke'],
-# 'Objeto': ['teclado','tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta', 'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'bulbo', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma'],
-# 'Partes do Corpo': ['olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro', 'aracnoide', 'duramater', 'perna'],
-# 'Profissão': ['otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico', 'presa', 'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador'],
-# 'Carro': ['Corsa', 'Meriva', 'Lamborghini', 'Monza', 'Opala', 'Impala', 'Chevette', 'Corvette', 'Ferrari', 'Jaguar', 'Porsche', 'Onix'], 'Animal': ['veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte', 'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo'],
-# 'País': ['Brasil', 'Suriname', 'Mexico', 'Alemanha', 'Italia', 'Turquia', 'Inglaterra', 'India', 'China', 'Tailandia', 'Indonesia', 'Laos', 'Togo', 'Chipre', 'Gana', 'Congo', 'Egito', 'Nigeria', 'Argelia', 'Angola'],
-# 'Nome': ['Giovanni', 'Fernando', 'Vinicius']
-# }
+'''lista_Secretas = ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca',
+                  'mexerica', 'pizza', 'poke', 'teclado', 'tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta', 'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'bulbo', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma', 'olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro', 'aracnoide', 'duramater', 'perna',
+                  'otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico',
+                  'presa', 'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador', 'meriva', 'lamborghini', 'monza', 'opala', 'impala', 'chevette', 'corvette', 'ferrari', 'jaguar', 'porsche', 'onix', 'veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte', 'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo', 'brasil', 'suriname', 'mexico', 'alemanha', 'italia', 'turquia', 'inglaterra', 'india', 'china', 'tailandia', 'indonesia', 'laos', 'togo', 'chipre', 'gana', 'congo', 'egito', 'nigeria', 'argelia', 'angola', 'giovanni', 'fernando', 'vinicius']'''
+lista_Secretas = {
+'Alimento':         ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca',
+                     'mexerica', 'pizza', 'poke'],
+'Objeto':           ['teclado','tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta',
+                     'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma'],
+'Partes do Corpo':  ['olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro',
+                     'aracnoide', 'duramater', 'perna', 'bulbo'],
+'Profissão':        ['otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico', 'presa',
+                     'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador'],
+'Carro':            ['Corsa', 'Meriva', 'Lamborghini', 'Monza', 'Opala', 'Impala', 'Chevette', 'Corvette', 'Ferrari',
+                     'Jaguar', 'Porsche', 'Onix'],
+'Animal':           ['veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte',
+                     'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo'],
+'País':             ['Brasil', 'Suriname', 'Mexico', 'Alemanha', 'Italia', 'Turquia', 'Inglaterra', 'India', 'China',
+                     'Tailandia', 'Indonesia', 'Laos', 'Togo', 'Chipre', 'Gana', 'Congo', 'Egito', 'Nigeria', 'Argelia', 'Angola'],
+'Nome':             ['Giovanni', 'Fernando', 'Vinicius']
+}
+
+chaves = categorizar(lista_Secretas)
+chave_aleatoria, lista_aleatoria = acessar(chaves[random.randrange(len(chaves))], lista_Secretas)
+segredo = lista_aleatoria[random.randrange(len(lista_aleatoria))].upper()
 
 tentativas = 6
-# print(lista_palavras)
-# print(len(lista_Secretas))
-# segredo = lista_palavras[random.randrange(100)]
-segredo = lista_Secretas[random.randint(-len(lista_Secretas), -1)]
-print(
-    f'\nA palavra secreta tem {len(segredo)} letras.\nVocê tem {tentativas} tentativas.\n\n')
+
+# print(f'{chaves}\n')  # Mostra as categorias
+print(f'\nCategoria: {chave_aleatoria.upper()}.\n\nA palavra secreta tem {len(segredo)} letras.\n\nVocê tem {tentativas} tentativas.\n')
 
 
 digitadas = []
@@ -45,7 +64,7 @@ digitadas = []
 while True:
 
     letra = input(
-        "\nDigite uma letra ou tente a palavra inteira (custa duas tentativas): ")
+        "\nDigite uma letra ou tente a palavra inteira (custa duas tentativas): ").upper()
 
     if not letra.isdecimal() and len(letra) == 1:
         if letra in segredo:
@@ -54,21 +73,21 @@ while True:
             tentativas -= 1
             if tentativas == 0:
                 print(
-                    f'\nInfelizmente, suas tentativas acabaram.\nA palavra era {segredo.upper()}.\n\n***************GAME OVER***************\n')
+                    f'\nInfelizmente, suas tentativas acabaram.\nA palavra era {segredo}.\n\n***************GAME OVER***************\n')
                 break
             print(f"Você errou... Ainda restam {tentativas} tentativas.")
             continue
     else:
         if not letra.isdecimal() and letra == segredo:
             print(
-                f'\nCARACA, QUE PALPITE CERTEIRO!\nA palavra secreta era {segredo.upper()}.\n\n')
+                f'\nCARACA, QUE PALPITE CERTEIRO!\nA palavra secreta era {segredo}.\n\n')
             break
         elif letra.isdecimal():
             print(f"\n***Digite apenas UMA LETRA***\n")
         else:
             tentativas -= 2
             print(
-                f"\nNão é essa a palavra... Restam {tentativas} tentativas.\n")
+                f"\nA palavra secreta não é essa... Restam {tentativas} tentativas.\n")
             if tentativas == 0:
                 break
         continue
@@ -84,5 +103,5 @@ while True:
 
     if palavra_secreta == segredo:
         print(
-            f'\nPARABÉNS, VOCÊ GANHOU!\nA palavra secreta era {segredo.upper()}.\n\n')
+            f'\nPARABÉNS, VOCÊ GANHOU!\nA palavra secreta era {segredo}.\n\n')
         break
