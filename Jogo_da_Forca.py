@@ -11,7 +11,6 @@
 
 import random
 from basico_101 import saudacao
-# import pandas as pd
 
 def categorizar(dicionario):
     categorias = []
@@ -24,12 +23,6 @@ def acessar(chave, dicionario):
 
 saudacao()
 
-# lista_palavras = pd.read_csv(r'C:\Users\Vinicius\Desktop\br-sem-acentos.csv')  # Extrair palavras direto de uma database
-
-'''lista_Secretas = ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca',
-                  'mexerica', 'pizza', 'poke', 'teclado', 'tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta', 'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'bulbo', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma', 'olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro', 'aracnoide', 'duramater', 'perna',
-                  'otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico',
-                  'presa', 'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador', 'meriva', 'lamborghini', 'monza', 'opala', 'impala', 'chevette', 'corvette', 'ferrari', 'jaguar', 'porsche', 'onix', 'veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte', 'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo', 'brasil', 'suriname', 'mexico', 'alemanha', 'italia', 'turquia', 'inglaterra', 'india', 'china', 'tailandia', 'indonesia', 'laos', 'togo', 'chipre', 'gana', 'congo', 'egito', 'nigeria', 'argelia', 'angola', 'giovanni', 'fernando', 'vinicius']'''
 lista_Secretas = {
 'Alimento':         ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca',
                      'mexerica', 'pizza', 'poke'],
