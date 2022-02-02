@@ -21,3 +21,8 @@ Simulação de um jogo de Mega Sena, e quantas vezes até ser vitorioso.
 (Jogo_da_Forca.py)
 
 Dentro de uma lista de palavras, o programa pega uma palavra randomicamente para o usuário, com suas três tentativas, tentar acertar.
+
+### Projeto 05 - 'Gerador/Verificador de CPF'
+(CPF)
+
+Geração e Verificação de CPFs

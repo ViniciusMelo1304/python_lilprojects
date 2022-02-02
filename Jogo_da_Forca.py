@@ -12,32 +12,35 @@
 import random
 from basico_101 import saudacao
 
+
 def categorizar(dicionario):
     categorias = []
     for chave in dicionario:
         categorias.append(chave)
     return categorias
 
+
 def acessar(chave, dicionario):
     return chave, dicionario[chave]
+
 
 saudacao()
 
 lista_Secretas = {
-'Alimento':         ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja', 'jaca',
-                     'mexerica', 'pizza', 'poke'],
-'Objeto':           ['teclado','tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro', 'camiseta',
-                     'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma'],
+'Alimento':         ['abobora', 'tomate', 'abacaxi', 'melancia', 'banana', 'uva', 'caqui', 'laranja',
+                    'jaca', 'mexerica', 'pizza', 'poke'],
+'Objeto':           ['teclado', 'tapete', 'mesa', 'computador', 'bancada', 'cadeira', 'travesseiro',
+                    'camiseta', 'camisa', 'casaco', 'jaqueta', 'blusa', 'telhado', 'parede', 'ventilador', 'medalha', 'celular', 'pasta', 'pente', 'telefone', 'modem', 'fio', 'monitor', 'microfone', 'gabinete', 'copo', 'tigela', 'mouse', 'mousepad', 'notebook', 'caneta', 'baralho', 'garrafa', 'diploma'],
 'Partes do Corpo':  ['olho', 'nariz', 'ouvido', 'cabelo', 'unha', 'dente', 'lingua', 'joelho', 'ombro',
-                     'aracnoide', 'duramater', 'perna', 'bulbo'],
-'Profissão':        ['otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico', 'presa',
-                     'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador'],
-'Carro':            ['Corsa', 'Meriva', 'Lamborghini', 'Monza', 'Opala', 'Impala', 'Chevette', 'Corvette', 'Ferrari',
-                     'Jaguar', 'Porsche', 'Onix'],
-'Animal':           ['veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali', 'suricato', 'girafa', 'rinoceronte',
-                     'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo'],
-'País':             ['Brasil', 'Suriname', 'Mexico', 'Alemanha', 'Italia', 'Turquia', 'Inglaterra', 'India', 'China',
-                     'Tailandia', 'Indonesia', 'Laos', 'Togo', 'Chipre', 'Gana', 'Congo', 'Egito', 'Nigeria', 'Argelia', 'Angola'],
+                    'aracnoide', 'duramater', 'perna', 'bulbo'],
+'Profissão':        ['otorrinolaringologista', 'cardiologista', 'ortopedista', 'dentista', 'mecanico',
+                    'lojista', 'reporter', 'chef', 'jornalista', 'engenheiro', 'cabeleireiro', 'programador'],
+'Carro':            ['Corsa', 'Meriva', 'Lamborghini', 'Monza', 'Opala', 'Impala', 'Chevette', 'Corvette',
+                    'Ferrari', 'Jaguar', 'Porsche', 'Onix'],
+'Animal':           ['veado', 'corsa', 'cachorro', 'gato', 'lince', 'pombo', 'guepardo', 'javali',
+                    'suricato', 'girafa', 'rinoceronte', 'tucano', 'arara', 'barata', 'formiga', 'rato', 'hamster', 'pato', 'sapo', 'pernilongo', 'abelha', 'emu', 'ema', 'avestruz', 'dodo'],
+'País':             ['Brasil', 'Suriname', 'Mexico', 'Alemanha', 'Italia', 'Turquia', 'Inglaterra',
+                    'India', 'China', 'Tailandia', 'Indonesia', 'Laos', 'Togo', 'Chipre', 'Gana', 'Congo', 'Egito', 'Nigeria', 'Argelia', 'Angola'],
 'Nome':             ['Giovanni', 'Fernando', 'Vinicius']
 }
 
@@ -56,8 +59,7 @@ digitadas = []
 
 while True:
 
-    letra = input(
-        "\nDigite uma letra ou tente a palavra inteira (custa duas tentativas): ").upper()
+    letra = input("\nDigite uma letra ou tente a palavra inteira (custa duas tentativas): ").upper()
 
     if not letra.isdecimal() and len(letra) == 1:
         if letra in segredo:
@@ -65,22 +67,19 @@ while True:
         else:
             tentativas -= 1
             if tentativas == 0:
-                print(
-                    f'\nInfelizmente, suas tentativas acabaram.\nA palavra era {segredo}.\n\n***************GAME OVER***************\n')
+                print(f'\nInfelizmente, suas tentativas acabaram.\nA palavra era {segredo}.\n\n***************GAME OVER***************\n')
                 break
             print(f"Você errou... Ainda restam {tentativas} tentativas.")
             continue
     else:
         if not letra.isdecimal() and letra == segredo:
-            print(
-                f'\nCARACA, QUE PALPITE CERTEIRO!\nA palavra secreta era {segredo}.\n\n')
+            print(f'\nCARACA, QUE PALPITE CERTEIRO!\nA palavra secreta era {segredo}.\n\n')
             break
         elif letra.isdecimal():
             print(f"\n***Digite apenas UMA LETRA***\n")
         else:
             tentativas -= 2
-            print(
-                f"\nA palavra secreta não é essa... Restam {tentativas} tentativas.\n")
+            print(f"\nA palavra secreta não é essa... Restam {tentativas} tentativas.\n")
             if tentativas == 0:
                 break
         continue
@@ -95,6 +94,5 @@ while True:
     print(palavra_secreta)
 
     if palavra_secreta == segredo:
-        print(
-            f'\nPARABÉNS, VOCÊ GANHOU!\nA palavra secreta era {segredo}.\n\n')
+        print(f'\nPARABÉNS, VOCÊ GANHOU!\nA palavra secreta era {segredo}.\n\n')
         break
