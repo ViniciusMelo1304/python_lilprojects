@@ -26,3 +26,18 @@ Dentro de uma lista de palavras, o programa pega uma palavra randomicamente para
 (CPF)
 
 Geração e Verificação de CPFs
+
+### Projeto 06 - 'Quiz'
+(quiz.py)
+
+Minijogo de perguntas e respostas
+
+### Projeto 07 - 'Gerador/Verificador de CNPJ'
+(CNPJ)
+
+Geração e Verificação de CNPJs
+
+### Projeto 08 - 'Lista de Afazeres'
+(lista_de_afazeres.py)
+
+Caderno para anotações de tarefas
