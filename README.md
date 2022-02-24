@@ -41,3 +41,18 @@ Geração e Verificação de CNPJs
 (lista_de_afazeres.py)
 
 Caderno para anotações de tarefas
+
+### Projeto 09 - 'Strings e Substrings'
+(ssubstrings_game.py)
+
+Nesse jogo, o usuário entra com uma palavra que será quebrada conforme exemplo:
+
+GANA
+G           A           N           A
+GA          AN          NA
+GAN         ANA
+GANA
+
+Cada substring da palavra que começar com uma vogal conta como um ponto para o Jogador 1. Entretanto, se começar com uma consoante, o ponto irá para o Jogador 2.
+Finalmente, mostra o vencedor - no exemplo -> Player1 pontuou 6 vezes e Player2 pontuou 4.
+Logo, Player1 é o vencedor.
